@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/home.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+  <script defer src="/home.js"></script>
+  <title>Home</title>
+</head>
+<body>
+  <nav>
+    <div class="logo">
+            <a href="/"> <img src="/logo.jpg" alt=""></a>
+        </div>
+        <ul class="bar">
+            <li><a href="#Face Recognition">Face Recognition</a></li>
+            <li>
+                <a href="#Face Expression Recognition">Face Expression Recognition</a>
+            </li>
+            <li>
+                <a href="#Face Landmark Detection">Face Landmark Detection</a>
+            </li>
+            <li>
+                <a href="#Realtime Face Tracking">Realtime Face Tracking</a>
+            </li>
+        </ul>
+    <ul >
+      <li><a href="/">Home</a></li>
+      {{#if user }}
+        <li><a href="/profile">Profile</a></li>
+        <li><a href="/auth/logout">Logout</a></li>
+      {{else}}
+        <li><a href="/login">Login</a></li>
+        <li><a href="/register">Register</a></li>
+      {{/if}}
+    </ul>
+  </nav>
+
+  <div class="info">
+        <div class="mainPage">
+            <h1>Face <span class="auto-input"></span> </h1>
+            <div class="textArea">
+                <div class="scroll"></div>
+                <small>Scroll</small>
+            </div>
+        </div>
+    </div>
+    <main>
+        <h2>What is Face Detection</h1>
+            <p>Yüz algılama, nesne sınıfı algılamanın özel bir durumu olarak kabul edilebilir. Nesne sınıfı algılamada görev, bir görüntüdeki belirli bir sınıfa ait olan tüm nesnelerin konumlarını ve boyutlarını bulmaktır. Örnekler arasında üst gövdeler, yayalar ve arabalar sayılabilir. Yüz algılama basitçe şu iki soruyu yanıtlıyor: 1. Toplanan görüntülerde veya videolarda insan yüzü var mı? 2. nerede bulunur? Yüz algılama algoritmaları, öndeki insan yüzlerinin algılanmasına odaklanır. Bir kişinin görüntüsünün parça parça eşleştirildiği görüntü algılamaya benzer. Görüntü, veritabanındaki görüntü depoları ile eşleşir. Veritabanındaki herhangi bir yüz özelliği değişikliği, eşleştirme işlemini geçersiz kılacaktır. Genetik algoritma ve öz yüz tekniğine dayalı güvenilir bir yüz algılama yaklaşımı: İlk olarak, gri seviyeli görüntüdeki tüm vadi bölgeleri test edilerek olası insan gözü bölgeleri tespit edilir. Daha sonra kaşlar, iris, burun deliği ve ağız köşelerini içeren tüm olası yüz bölgelerini oluşturmak için genetik algoritma kullanılır. Her olası yüz adayı, hem eşit olmayan aydınlatmanın neden olduğu aydınlatma etkisini azaltmak için normalleştirilir; ve kafa hareketinden kaynaklanan büzgü etkisi. Her adayın uygunluk değeri, öz-yüzler üzerindeki izdüşümüne göre ölçülür. Bir dizi yinelemeden sonra, daha fazla doğrulama için yüksek uygunluk değerine sahip tüm yüz adayları seçilir. Bu aşamada yüz simetrisi ölçülür ve her yüz adayı için farklı yüz özelliklerinin varlığı doğrulanır.</p></main>
+    <div class="container">
+        <section id="Face Recognition">
+            <div class="header">
+                <h2>Face Recognition</h2>
+            </div>
+            <div class="content">
+                <div class="text">
+                    <p>Yüz tanıma için, bir kişinin yüzünün özelliklerini tanımlamak için kullanılan herhangi bir yüz görüntüsünden bir yüz tanımlayıcısı (128 değere sahip bir özellik vektörü) hesaplamak için ResNet-34 benzeri bir mimari uygulanır. model
+                        eğitim için kullanılan yüzlerle sınırlı değildir, yani herhangi bir kişinin, örneğin kendinizin yüz tanıması için kullanabilirsiniz. Yüz tanımlayıcılarını karşılaştırarak rastgele iki yüzün benzerliğini belirleyebilirsiniz.
+                        örneğin öklid mesafesini hesaplayarak veya seçtiğiniz herhangi bir başka sınıflandırıcıyı kullanarak. Sinir ağı, face-recognition.js'de kullanılan FaceRecognizerNet'e ve dlib yüz tanıma örneğinde kullanılan ağa eşdeğerdir.
+                        Ağırlıklar davisking ile eğitilmiştir ve model, yüz tanıma için LFW (Etiketli Yüzler in the Wild) karşılaştırmasında %99,38'lik bir tahmin doğruluğu elde etmiştir. Kuantize modelin boyutu kabaca 6,2 MB'dir (face_recognition_model).
+                    </p>
+                </div>
+                <img src="https://user-images.githubusercontent.com/31125521/41526995-1a90e4e6-72e6-11e8-96d4-8b2ccdee5f79.gif" alt="">
+            </div>
+        </section>
+        <section id="Face Expression Recognition">
+            <div class="header">
+                <h2>Face Expression Recognition</h2>
+            </div>
+            <div class="content">
+                <img src="https://user-images.githubusercontent.com/31125521/50575270-f501d080-0dfb-11e9-9676-8f419efdade4.png" alt="">
+                <div class="text">
+                    <p>Yüz ifadesi tanıma modeli hafiftir, hızlıdır ve makul bir doğruluk sağlar. Model kabaca 310 kb'lik bir boyuta sahiptir ve derinlemesine ayrılabilir evrişimler ve yoğun bağlantılı bloklar kullanır. Bunun üzerine eğitildi
+                        kamuya açık veri kümelerinden çeşitli görüntülerin yanı sıra web'den kazınmış görüntüler. Gözlük takmanın tahmin sonuçlarının doğruluğunu azaltabileceğini unutmayın.
+                    </p>
+                </div>
+            </div>
+        </section>
+        <section id="Face Landmark Detection">
+            <div class="header">
+                <h2>Face Landmark Detection</h2>
+            </div>
+            <div class="content">
+                <div class="text">
+                    <p>Yüz hatlarını algılama, bir insan yüzünden önemli noktaları algılamak ve izlemek istediğimiz bir bilgisayarla görme görevidir. Bu görev birçok sorun için geçerlidir. Örneğin, bir insanın kafa duruş pozisyonunu tespit etmek için anahtar noktaları kullanabiliriz ve
+                        rotasyon. Bununla bir sürücünün dikkat edip etmediğini takip edebiliyoruz. Ayrıca, artırılmış gerçekliği daha kolay uygulamak için kilit noktaları kullanabiliriz. Ve bu göreve dayanarak üretebileceğimiz pek çok çözüm var.
+                    </p>
+                </div>
+                <img src="https://user-images.githubusercontent.com/31125521/46063404-00928b00-c16d-11e8-8f29-e9c50afd2bc8.jpg" alt="">
+            </div>
+        </section>
+
+        <section id="Realtime Face Tracking">
+            <div class="header">
+                <h2>Realtime Face Tracking</h2>
+            </div>
+            <div class="content">
+                <img class="gif" src="https://user-images.githubusercontent.com/31125521/47383860-ea450400-d705-11e8-9880-d5d15d952661.gif" alt="">
+                <div class="text">
+                    <p> Bu çerçeve, bir dizi görüntü boyunca dikdörtgenleri, yüzleri ve diğer göze çarpan nesneleri algılayabilir ve izleyebilir. Bu örnek, insan yüzlerini izlemek ve bu isteklerin sonuçlarını yorumlamak için isteklerin nasıl oluşturulacağını gösterir. Gözlenen yüz özelliklerinin geometrisini görselleştirmek için kod, algılanan birincil yüz ve en belirgin özellikleri etrafında yollar çizer. Örnek uygulama, sağlanan görüntüde bir yüz bulmak için bilgisayarla görme algoritmaları uygular. Bir yüz bulduğunda, videonun sonraki karelerinde bu yüzü takip etmeye çalışır.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+
+</body>
+</html>

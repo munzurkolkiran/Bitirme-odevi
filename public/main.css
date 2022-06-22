@@ -1,0 +1,122 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    align-items: center;
+    height: 100vh;
+    background: #1c92d2;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #f2fcfe, #1c92d2);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #f2fcfe, #1c92d2);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+canvas {
+    position: absolute;
+}
+
+video {
+    position: absolute;
+    border: 5px solid rgba(0, 0, 0, 0.5);
+    box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.5);
+    border-radius: 50px;
+}
+
+.container {
+    position: absolute;
+    top: 70px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+button {
+    padding: 1rem;
+    color: white;
+    background-color: rebeccapurple;
+    border-radius: 10px;
+    box-shadow: 5px solid rgba(0, 0, 0, 0.5);
+}
+
+nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    display: flex;
+    justify-content: space-between;
+    padding: .3rem;
+    background: #7F7FD5;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #91EAE4, #86A8E7, #7F7FD5);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #91EAE4, #86A8E7, #7F7FD5);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.head {
+    display: flex;
+    align-items: center;
+}
+
+.head>a {
+    text-decoration: none;
+}
+
+.head>a>h1 {
+    font-size: 2rem;
+    color: #fff;
+    margin-left: 50px;
+}
+
+ul {
+    display: flex;
+    align-items: center;
+}
+
+ul>li {
+    list-style-type: none;
+    margin-right: 20px;
+}
+
+ul>li>a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.1rem;
+}
+
+ul>li>a:hover {
+    color: #fff724;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo>a>img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-left: 20px;
+}
+
+main {
+    position: relative;
+}
+
+.info {
+    position: absolute;
+    top: 200px;
+    left: 200px;
+}
+
+h4 {
+    font-size: 1.5rem;
+}

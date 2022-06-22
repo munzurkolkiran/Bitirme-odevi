@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/log-in.css">
+   {{!-- <script defer src="/login.js"></script> --}}
+    {{!-- <script defer src="/face-api.min.js"></script> --}}
+    {{!-- <script src="https://cdn.jsdelivr.net/npm/@vladmandic/face-api@1/dist/face-api.js"></script> --}}
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+
+  <title>Login</title>
+</head>
+<body>
+  <nav>
+    <div class="logo">
+            <a href="/"> <img src="/logo.jpg" alt=""></a>
+        </div>
+        <div class="head">
+            <a href="/">
+                <h1>Face Detection</h1>
+            </a>
+        </div>
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/login">Login</a></li>
+      <li><a href="/register">Register</a></li>
+    </ul>
+  </nav>
+
+  <section>
+        <div class="container">
+            <div class="header">
+                <h2>Login</h2>
+            </div>
+            <form action="/auth/login" method="POST" class="form" id="form">
+                <div class="form-control">
+                    <input type="email" placeholder="email" id="username" name="email"/>
+                </div>
+
+                <div class="form-control">
+                    <input type="password" placeholder="Password" id="password" name="password"/>
+                </div>
+                 {{#if message }}
+                   <h4 class="alert">{{message}}</h4>
+                {{/if}}
+                <div class="buttons">
+                <button  type="submit" id="login">Log In</button>
+
+                </div>
+                <div class="links">
+                    <a href="">Forgot password?</a>
+                    
+                    <p>Don't have an account?
+                        <a href="/register">Sign in</a>
+                    </p>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+</body>
+</html>

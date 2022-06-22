@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/register.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+
+  <script defer src="/register.js"></script>
+  <title>Register</title>
+</head>
+<body>
+  <nav>
+    <div class="logo">
+            <a href="/"> <img src="/logo.jpg" alt=""></a>
+        </div>
+        <div class="head">
+            <a href="/">
+                <h1>Face Detection</h1>
+            </a>
+        </div>
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/login">Login</a></li>
+      <li><a href="/register">Register</a></li>
+    </ul>
+  </nav>
+
+  <section>
+        <div class="container">
+            <div class="header">
+                <h2>Create Account</h2>
+            </div>
+            <form  action="/auth/register" method="POST"id="form" class="form">
+                <div class="form-control">
+                    <label for="username">Username</label>
+                    <input type="text" placeholder="jhon doe" id="username" name="name" />
+                    
+                </div>
+                <div class="form-control">
+                    <label for="username">Email</label>
+                    <input type="email" placeholder="jhondoe@gmail.com" id="email" name="email"/>
+                   
+                </div>
+                <div class="form-control">
+                    <label for="username">Password</label>
+                    <input type="password" placeholder="Password" id="password" name="password"/>
+                   
+                </div>
+                <div class="form-control">
+                    <label for="username">Password check</label>
+                    <input type="password" placeholder="Password two" id="password2" name="passwordConfirm" />
+                </div>
+                <input type="file" accept="image/*" name="image">
+                <div class="picture">
+                    <button id="takePhoto">Take a photo</button>
+                </div>
+                  {{#if message }}
+      <h4 class="alert">{{message}}</h4>
+    {{/if}}
+    
+                <button type="submit" id="btn">Sign In</button>
+                <div class="links">
+                    <p>Have an account? <a href="/login">Log in</a></p>
+                </div>
+            </form>
+        </div>
+        <div class="videoContainer">
+            <div class="buttons">
+            </div>
+        </div>
+         
+    </section>
+
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+</body>
+</html>
